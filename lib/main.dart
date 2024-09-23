@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert'; // Para convertir JSON a Map
-import 'package:dio/dio.dart'; // para solicitudes
+import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
 
 void main() => runApp(MiApp());
@@ -114,12 +114,12 @@ class _HomeState extends State<Home> {
         },
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(Icons.connected_tv),
+            label: 'API',
           ),
           NavigationDestination(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
           NavigationDestination(
             icon: Icon(Icons.person),
@@ -230,7 +230,7 @@ class _Settings extends State<Settings> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Settings"),
+        title: Text("Saludo"),
         automaticallyImplyLeading: false,
         actions: <Widget>[
           IconButton(
@@ -329,16 +329,16 @@ class _Settings extends State<Settings> {
         },
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.home),
-            label: 'Inicio',
+            icon: Icon(Icons.connected_tv),
+            label: 'API',
           ),
           NavigationDestination(
-            icon: Icon(Icons.settings),
-            label: 'Configuración',
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
           NavigationDestination(
             icon: Icon(Icons.person),
-            label: 'Perfil',
+            label: 'Profile',
           ),
         ],
       ),
@@ -353,7 +353,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profile"),
+        title: Text("Mi perfil"),
         automaticallyImplyLeading: false,
       ),
       body: Center(
@@ -411,7 +411,8 @@ class Profile extends StatelessWidget {
                       color: const Color.fromARGB(255, 186, 35, 35)),
                   iconSize: 30,
                   onPressed: () async {
-                    final web = Uri.parse(' ');
+                    final web = Uri.parse(
+                        'https://github.com/FranEscobarG/app-fusion-retos.git');
                     if (await canLaunchUrl(web)) {
                       await launchUrl(web,
                           mode: LaunchMode.externalApplication);
@@ -438,12 +439,12 @@ class Profile extends StatelessWidget {
         },
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(Icons.connected_tv),
+            label: 'API',
           ),
           NavigationDestination(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
           NavigationDestination(
             icon: Icon(Icons.person),
